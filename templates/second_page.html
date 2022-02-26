@@ -18,7 +18,11 @@
         <![endif]-->
         <h1>Hello, Second Page</h1>
         <p>This is the Second page</p>
-        
+        <ul>
+            {% for lead in leads %}
+            <li>{{ lead }}</li>
+            {% endfor %}
+        </ul>
         <script src="" async defer></script>
     </body>
 </html>
