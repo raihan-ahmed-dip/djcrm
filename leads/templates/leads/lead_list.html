@@ -11,14 +11,28 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
+        <style>
+            .lead{
+                padding-top: 10px;
+                padding-bottom: 10px;
+                padding-left: 6px;
+                padding-right: 6px;
+                margin-top: 10px;
+                background-color: #f6f6f6;
+                width: 100%;
+            }
+        </style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Hello, CRM</h1>
-        <p>Here is our custom HTML Template.</p>
-        
+        <h1>This is all of our leads</h1>
+        {% for lead in leads %}
+            <div class="lead">
+                <a href="/leads/{{ lead.pk}}">{{ lead.first_name }} {{lead.last_name }}. Age: {{ lead.age }}</a>
+            </div>
+        {% endfor %}
         <script src="" async defer></script>
     </body>
 </html>
