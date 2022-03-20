@@ -27,14 +27,14 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <a href="/leads">Go Back to Leads</a>
+        <a href="{% url 'leads:lead-list' %}">Go Back to Leads</a>
         <hr/>
         <h1>This is the details of {{lead.first_name }}</h1>
         <p>This persons age: {{ lead.age }}</p>
         <p>The agent responsible for this lead is: {{ lead.agent }}</p>
         <hr/>
-        <a href="/leads/{{ lead.pk }}/update/">Update</a>
-        <a href="/leads/{{ lead.pk }}/delete/">Delete</a>
+        <a href="{% url 'leads:lead-update' lead.pk %}">Update</a>
+        <a href="{% url 'leads:lead-delete' lead.pk %}">Delete</a>
 
         <script src="" async defer></script>
     </body>
