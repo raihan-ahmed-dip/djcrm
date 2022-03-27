@@ -6,7 +6,9 @@ from django.contrib.auth.models import AbstractUser
 #User = get_user_model()
 
 class User(AbstractUser):
-    pass
+    is_organizer = models.BooleanField(default=True)
+    is_agnet = models.BooleanField(default=False)
+    
 
 
 class UserProfile(models.Model):
