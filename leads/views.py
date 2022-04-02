@@ -62,7 +62,7 @@ class LeadCreateView(OrganiserAndLoginRequiredMixin, CreateView):
             subject="A lead has been created",
             message="Go to the site to see the new lead",
             from_email = "test@test.com",
-            recipient_list=["raihan.dip@gmail.com"]
+            recipient_list=[user.email]
         )
         return super(LeadCreateView, self).form_valid(form)
 
